@@ -1,10 +1,10 @@
 
-jQuery(function($) {
+jQuery(function ($) {
     if (!window.dlCountdownIds) {
         return;
     }
 
-    $.each(window.dlCountdownIds, function(_, id) {
+    $.each(window.dlCountdownIds, function (_, id) {
         const $el = $('#' + id);
         if ($el.length === 0) {
             return;
@@ -15,21 +15,20 @@ jQuery(function($) {
         const label = $el.data('label') || dlContentExpiry.label;
 
         function updateCountdown() {
-            
-            const now = new Date($el.data('now'));
+
+            const now = Date.now();
             const diff = (expiry - now) / 1000;
 
             if (diff <= 0) {
-                $el.html(expiredText);
-                const $postContent = $el.next();
-                if ($postContent.length) $postContent.hide();
+                location.reload();
+
                 return;
             }
 
             const days = Math.floor(diff / 86400);
             const hours = Math.floor((diff % 86400) / 3600);
             const minutes = Math.floor((diff % 3600) / 60);
-            const seconds = diff % 60;
+            const seconds = parseInt(diff % 60);
 
             let html = '';
             if (days > 0) {
@@ -44,8 +43,12 @@ jQuery(function($) {
             if (html == '') {
                 separator = ' ' + dlContentExpiry.andText + ' ';
             }
-            html += minutes + ' ' + dlContentExpiry.minutesText + separator;
-            html += seconds + ' ' + dlContentExpiry.secondsText;
+            if (hours == 0 && minutes == 0) {
+                html += seconds + ' ' + dlContentExpiry.secondsText;
+            } else {
+                html += minutes + ' ' + dlContentExpiry.minutesText + separator;
+                html += seconds + ' ' + dlContentExpiry.secondsText;
+            }
 
             $el.html("<strong>" + label + "</strong> " + html);
         }
