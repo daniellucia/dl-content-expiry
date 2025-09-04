@@ -133,6 +133,8 @@ class Plugin
             $message = apply_filters('dl_expired_content_message', 'This content has expired.', $post->ID);
             $content = '<div class="dl-expired-message"><strong>' . esc_html($message) . '</strong></div>';
             do_action('dl_content_after_expire', $post->ID);
+            
+            return $content;
 
         } else {
             $countdown_id = 'dl-countdown-' . $post->ID;
