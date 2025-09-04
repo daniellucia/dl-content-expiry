@@ -1,6 +1,6 @@
 <?php
 
-namespace DLContentExpiry;
+namespace DL\ContentExpiry;
 
 defined('ABSPATH') || exit;
 

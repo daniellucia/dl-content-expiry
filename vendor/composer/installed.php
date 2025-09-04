@@ -1,20 +1,20 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'daniel-lucia/dl-content-expiry',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '299dd82c79885214bc996d9548c6f36887227139',
-        'type' => 'library',
+        'reference' => '58183a6300030a10d7b7e90cf5c3bc6a0b9d0156',
+        'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
+        'daniel-lucia/dl-content-expiry' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '299dd82c79885214bc996d9548c6f36887227139',
-            'type' => 'library',
+            'reference' => '58183a6300030a10d7b7e90cf5c3bc6a0b9d0156',
+            'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,

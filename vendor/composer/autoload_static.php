@@ -4,17 +4,17 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd751713988987e9331980363e24189ce
+class ComposerStaticInitDLContentExpiry
 {
     public static $prefixLengthsPsr4 = array (
         'D' => 
         array (
-            'DLContentExpiry\\' => 16,
+            'DL\\ContentExpiry\\' => 17,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'DLContentExpiry\\' => 
+        'DL\\ContentExpiry\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -27,9 +27,9 @@ class ComposerStaticInitd751713988987e9331980363e24189ce
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd751713988987e9331980363e24189ce::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd751713988987e9331980363e24189ce::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd751713988987e9331980363e24189ce::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitDLContentExpiry::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitDLContentExpiry::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitDLContentExpiry::$classMap;
 
         }, null, ClassLoader::class);
     }

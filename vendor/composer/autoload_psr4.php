@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'DLContentExpiry\\' => array($baseDir . '/src'),
+    'DL\\ContentExpiry\\' => array($baseDir . '/src'),
 );

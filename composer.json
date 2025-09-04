@@ -1,7 +1,22 @@
 {
+    "name": "daniel-lucia/dl-content-expiry",
+    "description": "Expires the content after a specified time.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Daniel Lucia",
+            "email": "daniellucia84@gmail.com",
+            "homepage": "http://daniellucia.es"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "DLContentExpiry\\": "src/"
+            "DL\\ContentExpiry\\": "src/"
         }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "autoloader-suffix": "DLContentExpiry"
     }
 }
