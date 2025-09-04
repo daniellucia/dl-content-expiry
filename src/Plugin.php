@@ -1,8 +1,10 @@
 <?php
 
+namespace DLContentExpiry;
+
 defined('ABSPATH') || exit;
 
-class DLContentExpiryPlugin
+class Plugin
 {
     /**
      * Iniciamos el plugin
@@ -121,9 +123,10 @@ class DLContentExpiryPlugin
             return $content;
         }
 
+        $html = '';
         $expiry_ts = $this->expiry($expiry);
         $now = $this->now();
-
+        
         if ($expiry_ts <= $now) {
 
             do_action('dl_content_before_expire', $post->ID);
@@ -185,7 +188,7 @@ class DLContentExpiryPlugin
     private function now(string $format = 'Y-m-d H:i:s'): String
     {
         $timezone = wp_timezone();
-        return (new DateTime('now', $timezone))->format($format);
+        return (new \DateTime('now', $timezone))->format($format);
     }
 
     /**
@@ -198,6 +201,6 @@ class DLContentExpiryPlugin
     private function expiry($expiry, string $format = 'Y-m-d H:i:s'): String
     {
         $timezone = wp_timezone();
-        return (new DateTime($expiry, $timezone))->format($format);
+        return (new \DateTime($expiry, $timezone))->format($format);
     }
 }
