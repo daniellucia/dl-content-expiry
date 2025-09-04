@@ -53,7 +53,7 @@ class DLContentExpiryPlugin
             echo ' ' . esc_html__('Enable content expiry for this post', 'dl-content-expiry');
             echo '</label>';
         echo '</p>';
-        
+
         echo '<p style="display:flex;flex-direction:column;gap:8px;">';
             echo '<label for="dl_expiry_datetime">' . esc_html__('Date and time of expiry:', 'dl-content-expiry') . '</label>';
             echo '<input type="datetime-local" id="dl_expiry_datetime" name="dl_expiry_datetime" value="' . esc_attr($expiry) . '" style="width:100%;" />';
@@ -138,6 +138,11 @@ class DLContentExpiryPlugin
         }
     }
 
+    /**
+     * Encolamos el script para el countdown
+     * @return void
+     * @author Daniel Lucia
+     */
     public function enqueueCountdownScript()
     {
         wp_enqueue_script(
