@@ -159,7 +159,8 @@ class DLContentExpiryPlugin
             'daysText' => __('days', 'dl-content-expiry'),
             'hoursText' => __('hours', 'dl-content-expiry'),
             'minutesText' => __('minutes', 'dl-content-expiry'),
-            'secondsText' => __('seconds', 'dl-content-expiry')
+            'secondsText' => __('seconds', 'dl-content-expiry'),
+            'andText' => __('and', 'dl-content-expiry'),
         ]);
 
         wp_enqueue_style(

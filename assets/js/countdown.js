@@ -40,7 +40,11 @@ jQuery(function($) {
                 html += hours + ' ' + dlContentExpiry.hoursText + ', ';
             }
 
-            html += minutes + ' ' + dlContentExpiry.minutesText + ', ';
+            let separator = ', ';
+            if (html == '') {
+                separator = ' ' + dlContentExpiry.andText + ' ';
+            }
+            html += minutes + ' ' + dlContentExpiry.minutesText + separator;
             html += seconds + ' ' + dlContentExpiry.secondsText;
 
             $el.html("<strong>" + label + "</strong> " + html);

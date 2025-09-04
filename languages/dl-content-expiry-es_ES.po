@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Content expiry\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-04 07:13+0000\n"
-"PO-Revision-Date: 2025-09-04 07:24+0000\n"
+"PO-Revision-Date: 2025-09-04 07:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -14,6 +14,10 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.8.0; wp-6.8.2; php-8.1.29\n"
 "X-Domain: dl-content-expiry"
+
+#: src/Plugin.php:163
+msgid "and"
+msgstr "y"
 
 #. Name of the plugin
 msgid "Content expiry"
@@ -31,7 +35,7 @@ msgstr "Daniel Lúcia"
 msgid "Date and time of expiry:"
 msgstr "Fecha y hora de expiración:"
 
-#: src/Plugin.php:154
+#: src/Plugin.php:159
 msgid "days"
 msgstr "días"
 
@@ -47,7 +51,7 @@ msgstr "Expira el contenido después de un tiempo determinado."
 msgid "Expiry date"
 msgstr "Fecha de caducidad"
 
-#: src/Plugin.php:155
+#: src/Plugin.php:160
 msgid "hours"
 msgstr "horas"
 
@@ -55,11 +59,11 @@ msgstr "horas"
 msgid "http://www.daniellucia.es"
 msgstr "http://www.daniellucia.es"
 
-#: src/Plugin.php:156
+#: src/Plugin.php:161
 msgid "minutes"
 msgstr "minutos"
 
-#: src/Plugin.php:157
+#: src/Plugin.php:162
 msgid "seconds"
 msgstr "segundos"
 
@@ -71,10 +75,10 @@ msgstr ""
 "Establezca la fecha y la hora en que expirará este contenido. Después de "
 "esta fecha, el contenido se ocultará y se mostrará un mensaje."
 
-#: src/Plugin.php:128 src/Plugin.php:131 src/Plugin.php:152
+#: src/Plugin.php:128 src/Plugin.php:131 src/Plugin.php:157
 msgid "This content has expired."
 msgstr "Este contenido ha caducado."
 
-#: src/Plugin.php:131 src/Plugin.php:153
+#: src/Plugin.php:131 src/Plugin.php:158
 msgid "Time left:"
 msgstr "Tiempo restante:"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Content expiry\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-04 07:23+0000\n"
+"POT-Creation-Date: 2025-09-04 07:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,6 +15,10 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.8.0; wp-6.8.2; php-8.1.29\n"
 "X-Domain: dl-content-expiry"
+
+#: src/Plugin.php:163
+msgid "and"
+msgstr ""
 
 #. Name of the plugin
 msgid "Content expiry"
@@ -32,7 +36,7 @@ msgstr ""
 msgid "Date and time of expiry:"
 msgstr ""
 
-#: src/Plugin.php:154
+#: src/Plugin.php:159
 msgid "days"
 msgstr ""
 
@@ -48,7 +52,7 @@ msgstr ""
 msgid "Expiry date"
 msgstr ""
 
-#: src/Plugin.php:155
+#: src/Plugin.php:160
 msgid "hours"
 msgstr ""
 
@@ -56,11 +60,11 @@ msgstr ""
 msgid "http://www.daniellucia.es"
 msgstr ""
 
-#: src/Plugin.php:156
+#: src/Plugin.php:161
 msgid "minutes"
 msgstr ""
 
-#: src/Plugin.php:157
+#: src/Plugin.php:162
 msgid "seconds"
 msgstr ""
 
@@ -70,10 +74,10 @@ msgid ""
 "content will be hidden and a message will be displayed."
 msgstr ""
 
-#: src/Plugin.php:128 src/Plugin.php:131 src/Plugin.php:152
+#: src/Plugin.php:128 src/Plugin.php:131 src/Plugin.php:157
 msgid "This content has expired."
 msgstr ""
 
-#: src/Plugin.php:131 src/Plugin.php:153
+#: src/Plugin.php:131 src/Plugin.php:158
 msgid "Time left:"
 msgstr ""
