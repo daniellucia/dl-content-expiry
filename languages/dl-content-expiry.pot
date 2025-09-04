@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Content expiry\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-04 07:13+0000\n"
+"POT-Creation-Date: 2025-09-04 07:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -20,16 +20,24 @@ msgstr ""
 msgid "Content expiry"
 msgstr ""
 
+#: src/Plugin.php:68
+msgid "Current server time"
+msgstr ""
+
 #. Author of the plugin
 msgid "Daniel Lúcia"
 msgstr ""
 
-#: src/Plugin.php:47
+#: src/Plugin.php:58
 msgid "Date and time of expiry:"
 msgstr ""
 
-#: src/Plugin.php:128
+#: src/Plugin.php:154
 msgid "days"
+msgstr ""
+
+#: src/Plugin.php:53
+msgid "Enable content expiry for this post"
 msgstr ""
 
 #. Description of the plugin
@@ -40,7 +48,7 @@ msgstr ""
 msgid "Expiry date"
 msgstr ""
 
-#: src/Plugin.php:129
+#: src/Plugin.php:155
 msgid "hours"
 msgstr ""
 
@@ -48,18 +56,24 @@ msgstr ""
 msgid "http://www.daniellucia.es"
 msgstr ""
 
-#: src/Plugin.php:130
+#: src/Plugin.php:156
 msgid "minutes"
 msgstr ""
 
-#: src/Plugin.php:131
+#: src/Plugin.php:157
 msgid "seconds"
 msgstr ""
 
-#: src/Plugin.php:99 src/Plugin.php:104 src/Plugin.php:126
+#: src/Plugin.php:63
+msgid ""
+"Set the date and time when this content will expire. After this date, the "
+"content will be hidden and a message will be displayed."
+msgstr ""
+
+#: src/Plugin.php:128 src/Plugin.php:131 src/Plugin.php:152
 msgid "This content has expired."
 msgstr ""
 
-#: src/Plugin.php:104 src/Plugin.php:127
+#: src/Plugin.php:131 src/Plugin.php:153
 msgid "Time left:"
 msgstr ""
