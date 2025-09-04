@@ -5,33 +5,33 @@ jQuery(function($) {
     }
 
     $.each(window.dlCountdownIds, function(_, id) {
-        var $el = $('#' + id);
+        const $el = $('#' + id);
         if ($el.length === 0) {
             return;
         }
 
-        var expiry = new Date($el.data('expiry'));
-        var expiredText = $el.data('expired-text') || dlContentExpiry.expiredText;
-        var label = $el.data('label') || dlContentExpiry.label;
+        const expiry = new Date($el.data('expiry'));
+        const expiredText = $el.data('expired-text') || dlContentExpiry.expiredText;
+        const label = $el.data('label') || dlContentExpiry.label;
 
         function updateCountdown() {
             
-            var now = new Date($el.data('now'));
-            var diff = (expiry - now) / 1000;
+            const now = new Date($el.data('now'));
+            const diff = (expiry - now) / 1000;
 
             if (diff <= 0) {
                 $el.html(expiredText);
-                var $postContent = $el.next();
+                const $postContent = $el.next();
                 if ($postContent.length) $postContent.hide();
                 return;
             }
 
-            var days = Math.floor(diff / 86400);
-            var hours = Math.floor((diff % 86400) / 3600);
-            var minutes = Math.floor((diff % 3600) / 60);
-            var seconds = diff % 60;
+            const days = Math.floor(diff / 86400);
+            const hours = Math.floor((diff % 86400) / 3600);
+            const minutes = Math.floor((diff % 3600) / 60);
+            const seconds = diff % 60;
 
-            html = '';
+            let html = '';
             if (days > 0) {
                 html += days + ' ' + dlContentExpiry.daysText + ', ';
             }
