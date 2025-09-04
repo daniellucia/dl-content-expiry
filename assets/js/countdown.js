@@ -11,7 +11,6 @@ jQuery(function ($) {
         }
 
         const expiry = new Date($el.data('expiry'));
-        const expiredText = $el.data('expired-text') || dlContentExpiry.expiredText;
         const label = $el.data('label') || dlContentExpiry.label;
 
         function updateCountdown() {
