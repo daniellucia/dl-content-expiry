@@ -125,7 +125,12 @@ class DLContentExpiryPlugin
         $now = $this->now();
 
         if ($expiry_ts <= $now) {
-            return '<div class="dl-expired-message"><strong>' . esc_html__('This content has expired.', 'dl-content-expiry') . '</strong></div>';
+
+            do_action('dl_content_before_expire', $post->ID);
+            $message = apply_filters('dl_expired_content_message', 'This content has expired.', $post->ID);
+            $content = '<div class="dl-expired-message"><strong>' . esc_html($message) . '</strong></div>';
+            do_action('dl_content_after_expire', $post->ID);
+
         } else {
             $countdown_id = 'dl-countdown-' . $post->ID;
             $html = '<div class="dl-countdown" id="' . esc_attr($countdown_id) . '" data-expiry="' . esc_attr($expiry_ts) . '" data-now="' . esc_attr($now) . '" data-expired-text="' . esc_attr(__('This content has expired.', 'dl-content-expiry')) . '" data-label="' . esc_attr(__('Time left:', 'dl-content-expiry')) . '"></div>';
