@@ -10,13 +10,14 @@ jQuery(function($) {
             return;
         }
 
-        var expiry = parseInt($el.data('expiry')) * 1000;
+        var expiry = new Date($el.data('expiry'));
         var expiredText = $el.data('expired-text') || dlContentExpiry.expiredText;
         var label = $el.data('label') || dlContentExpiry.label;
 
         function updateCountdown() {
-            var now = Date.now();
-            var diff = Math.floor((expiry - now) / 1000);
+            
+            var now = new Date($el.data('now'));
+            var diff = (expiry - now) / 1000;
 
             if (diff <= 0) {
                 $el.html(expiredText);
