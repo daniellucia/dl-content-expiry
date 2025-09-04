@@ -17,6 +17,6 @@ add_action('plugins_loaded', function () {
 
     load_plugin_textdomain('dl-woo-content-expiry', false, dirname(plugin_basename(__FILE__)) . '/languages');
 
-    $plugin = new DLWOOContentExpiryPlugin();
+    $plugin = new DLContentExpiryPlugin();
     $plugin->init();
 });
