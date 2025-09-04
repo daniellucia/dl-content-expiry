@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Content expiry\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-04 07:13+0000\n"
+"PO-Revision-Date: 2025-09-04 07:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: Español\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.1.29\n"
+"X-Domain: dl-content-expiry"
+
+#. Name of the plugin
+msgid "Content expiry"
+msgstr "Caducidad del contenido"
+
+#. Author of the plugin
+msgid "Daniel Lúcia"
+msgstr "Daniel Lúcia"
+
+#: src/Plugin.php:47
+msgid "Date and time of expiry:"
+msgstr "Fecha y hora de expiración:"
+
+#: src/Plugin.php:128
+msgid "days"
+msgstr "días"
+
+#. Description of the plugin
+msgid "Expira el contenido después de un tiempo determinado."
+msgstr "Expira el contenido después de un tiempo determinado."
+
+#: src/Plugin.php:29
+msgid "Expiry date"
+msgstr "Fecha de caducidad"
+
+#: src/Plugin.php:129
+msgid "hours"
+msgstr "horas"
+
+#. Author URI of the plugin
+msgid "http://www.daniellucia.es"
+msgstr "http://www.daniellucia.es"
+
+#: src/Plugin.php:130
+msgid "minutes"
+msgstr "minutos"
+
+#: src/Plugin.php:131
+msgid "seconds"
+msgstr "segundos"
+
+#: src/Plugin.php:99 src/Plugin.php:104 src/Plugin.php:126
+msgid "This content has expired."
+msgstr "Este contenido ha caducado."
+
+#: src/Plugin.php:104 src/Plugin.php:127
+msgid "Time left:"
+msgstr "Tiempo restante:"
