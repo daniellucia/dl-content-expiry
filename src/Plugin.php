@@ -65,7 +65,7 @@ class DLContentExpiryPlugin
 
         echo '<p>';
             echo '<small>';
-                echo esc_html__('Current server time', 'dl-content-expiry') . ': <em>' . esc_html(current_time('Y-m-d H:i')) . '</em>';
+                echo esc_html__('Current server time', 'dl-content-expiry') . ': <em>' . esc_html($this->now('Y-m-d H:i')) . '</em>';
             echo '</small>';
         echo '</p>';
     }
@@ -121,14 +121,14 @@ class DLContentExpiryPlugin
             return $content;
         }
 
-        $expiry_ts = strtotime($expiry);
-        $now = current_time('timestamp');
+        $expiry_ts = $this->expiry($expiry);
+        $now = $this->now();
 
         if ($expiry_ts <= $now) {
             return '<div class="dl-expired-message"><strong>' . esc_html__('This content has expired.', 'dl-content-expiry') . '</strong></div>';
         } else {
             $countdown_id = 'dl-countdown-' . $post->ID;
-            $html = '<div class="dl-countdown" id="' . esc_attr($countdown_id) . '" data-expiry="' . esc_attr($expiry_ts) . '" data-expired-text="' . esc_attr(__('This content has expired.', 'dl-content-expiry')) . '" data-label="' . esc_attr(__('Time left:', 'dl-content-expiry')) . '"></div>';
+            $html = '<div class="dl-countdown" id="' . esc_attr($countdown_id) . '" data-expiry="' . esc_attr($expiry_ts) . '" data-now="' . esc_attr($now) . '" data-expired-text="' . esc_attr(__('This content has expired.', 'dl-content-expiry')) . '" data-label="' . esc_attr(__('Time left:', 'dl-content-expiry')) . '"></div>';
 
             add_action('wp_footer', function () use ($countdown_id) {
                 echo '<script>window.dlCountdownIds = window.dlCountdownIds || [];window.dlCountdownIds.push("' . esc_js($countdown_id) . '");</script>';
@@ -168,5 +168,30 @@ class DLContentExpiryPlugin
             [],
             DL_CONTENT_EXPIRY_VERSION
         );
+    }
+
+    /**
+     * Obtenemos la fecha actual teniendo en cuenta la zona horaria
+     * @param string $format
+     * @return string
+     * @author Daniel Lucia
+     */
+    private function now(string $format = 'Y-m-d H:i:s'): String
+    {
+        $timezone = wp_timezone();
+        return (new DateTime('now', $timezone))->format($format);
+    }
+
+    /**
+     * Obtenemos la fecha de expiración y formateamos
+     * @param mixed $expiry
+     * @param string $format
+     * @return string
+     * @author Daniel Lucia
+     */
+    private function expiry($expiry, string $format = 'Y-m-d H:i:s'): String
+    {
+        $timezone = wp_timezone();
+        return (new DateTime($expiry, $timezone))->format($format);
     }
 }
