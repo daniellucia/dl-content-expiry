@@ -43,9 +43,31 @@ class DLContentExpiryPlugin
     public function renderExpiryMetaBox($post)
     {
         $expiry = get_post_meta($post->ID, '_dl_expiry_datetime', true);
+        $enabled = get_post_meta($post->ID, '_dl_expiry_enabled', true);
+
         wp_nonce_field('dl_content_expiry_nonce', 'dl_content_expiry_nonce');
-        echo '<label for="dl_expiry_datetime">' . esc_html__('Date and time of expiry:', 'dl-content-expiry') . '</label><br>';
-        echo '<input type="datetime-local" id="dl_expiry_datetime" name="dl_expiry_datetime" value="' . esc_attr($expiry) . '" style="width:100%;" />';
+
+        echo '<p>';
+            echo '<label for="dl_expiry_enabled">';
+            echo '<input type="checkbox" id="dl_expiry_enabled" name="dl_expiry_enabled" value="1"' . checked($enabled, '1', false) . ' />';
+            echo ' ' . esc_html__('Enable content expiry for this post', 'dl-content-expiry');
+            echo '</label>';
+        echo '</p>';
+        
+        echo '<p style="display:flex;flex-direction:column;gap:8px;">';
+            echo '<label for="dl_expiry_datetime">' . esc_html__('Date and time of expiry:', 'dl-content-expiry') . '</label>';
+            echo '<input type="datetime-local" id="dl_expiry_datetime" name="dl_expiry_datetime" value="' . esc_attr($expiry) . '" style="width:100%;" />';
+        echo '</p>';
+
+        echo '<p>';
+            echo esc_html__('Set the date and time when this content will expire. After this date, the content will be hidden and a message will be displayed.', 'dl-content-expiry');
+        echo '</p>';
+
+        echo '<p>';
+            echo '<small>';
+                echo esc_html__('Current server time', 'dl-content-expiry') . ': <em>' . esc_html(current_time('Y-m-d H:i')) . '</em>';
+            echo '</small>';
+        echo '</p>';
     }
 
     /**
@@ -71,6 +93,9 @@ class DLContentExpiryPlugin
         if (isset($_POST['dl_expiry_datetime'])) {
             update_post_meta($post_id, '_dl_expiry_datetime', sanitize_text_field($_POST['dl_expiry_datetime']));
         }
+
+        $enabled = isset($_POST['dl_expiry_enabled']) ? '1' : '0';
+        update_post_meta($post_id, '_dl_expiry_enabled', $enabled);
     }
 
     /**
@@ -85,6 +110,11 @@ class DLContentExpiryPlugin
         }
 
         global $post;
+        $enabled = get_post_meta($post->ID, '_dl_expiry_enabled', true);
+        if ($enabled !== '1') {
+            return $content;
+        }
+
         $expiry = get_post_meta($post->ID, '_dl_expiry_datetime', true);
 
         if (!$expiry) {
@@ -95,20 +125,16 @@ class DLContentExpiryPlugin
         $now = current_time('timestamp');
 
         if ($expiry_ts <= $now) {
-
             return '<div class="dl-expired-message"><strong>' . esc_html__('This content has expired.', 'dl-content-expiry') . '</strong></div>';
-
         } else {
-
             $countdown_id = 'dl-countdown-' . $post->ID;
             $html = '<div class="dl-countdown" id="' . esc_attr($countdown_id) . '" data-expiry="' . esc_attr($expiry_ts) . '" data-expired-text="' . esc_attr(__('This content has expired.', 'dl-content-expiry')) . '" data-label="' . esc_attr(__('Time left:', 'dl-content-expiry')) . '"></div>';
-            
+
             add_action('wp_footer', function () use ($countdown_id) {
                 echo '<script>window.dlCountdownIds = window.dlCountdownIds || [];window.dlCountdownIds.push("' . esc_js($countdown_id) . '");</script>';
             });
 
             return $html . $content;
-
         }
     }
 
@@ -130,13 +156,12 @@ class DLContentExpiryPlugin
             'minutesText' => __('minutes', 'dl-content-expiry'),
             'secondsText' => __('seconds', 'dl-content-expiry')
         ]);
-        
+
         wp_enqueue_style(
             'dl-content-expiry-countdown',
             plugin_dir_url(DL_CONTENT_EXPIRY_FILE) . 'assets/css/countdown.css',
             [],
             DL_CONTENT_EXPIRY_VERSION
         );
-        
     }
 }
