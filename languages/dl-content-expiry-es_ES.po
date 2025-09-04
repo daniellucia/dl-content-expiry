@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Content expiry\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-04 07:13+0000\n"
-"PO-Revision-Date: 2025-09-04 07:14+0000\n"
+"PO-Revision-Date: 2025-09-04 07:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -19,17 +19,25 @@ msgstr ""
 msgid "Content expiry"
 msgstr "Caducidad del contenido"
 
+#: src/Plugin.php:68
+msgid "Current server time"
+msgstr "Hora actual del servidor"
+
 #. Author of the plugin
 msgid "Daniel Lúcia"
 msgstr "Daniel Lúcia"
 
-#: src/Plugin.php:47
+#: src/Plugin.php:58
 msgid "Date and time of expiry:"
 msgstr "Fecha y hora de expiración:"
 
-#: src/Plugin.php:128
+#: src/Plugin.php:154
 msgid "days"
 msgstr "días"
+
+#: src/Plugin.php:53
+msgid "Enable content expiry for this post"
+msgstr "Activar la caducidad del contenido de este post"
 
 #. Description of the plugin
 msgid "Expira el contenido después de un tiempo determinado."
@@ -39,7 +47,7 @@ msgstr "Expira el contenido después de un tiempo determinado."
 msgid "Expiry date"
 msgstr "Fecha de caducidad"
 
-#: src/Plugin.php:129
+#: src/Plugin.php:155
 msgid "hours"
 msgstr "horas"
 
@@ -47,18 +55,26 @@ msgstr "horas"
 msgid "http://www.daniellucia.es"
 msgstr "http://www.daniellucia.es"
 
-#: src/Plugin.php:130
+#: src/Plugin.php:156
 msgid "minutes"
 msgstr "minutos"
 
-#: src/Plugin.php:131
+#: src/Plugin.php:157
 msgid "seconds"
 msgstr "segundos"
 
-#: src/Plugin.php:99 src/Plugin.php:104 src/Plugin.php:126
+#: src/Plugin.php:63
+msgid ""
+"Set the date and time when this content will expire. After this date, the "
+"content will be hidden and a message will be displayed."
+msgstr ""
+"Establezca la fecha y la hora en que expirará este contenido. Después de "
+"esta fecha, el contenido se ocultará y se mostrará un mensaje."
+
+#: src/Plugin.php:128 src/Plugin.php:131 src/Plugin.php:152
 msgid "This content has expired."
 msgstr "Este contenido ha caducado."
 
-#: src/Plugin.php:104 src/Plugin.php:127
+#: src/Plugin.php:131 src/Plugin.php:153
 msgid "Time left:"
 msgstr "Tiempo restante:"
