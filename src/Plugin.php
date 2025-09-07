@@ -156,7 +156,7 @@ class Plugin
     }
 
     /**
-     * Oculata el contenido del post en la api REST si ha expirado
+     * Oculta el contenido del post en la api REST si ha expirado
      * @param mixed $response
      * @param mixed $post
      * @param mixed $request
@@ -168,8 +168,8 @@ class Plugin
         $expiry = get_post_meta($post->ID, '_dl_expiry_datetime', true);
 
         if ($enabled === '1' && $expiry) {
-            $expiry_ts = strtotime($expiry);
-            $now = current_time('timestamp');
+            $expiry_ts = $this->expiry($expiry);
+            $now = $this->now();
             if ($expiry_ts <= $now) {
                 $message = apply_filters('dl_expired_content_message', 'This content has expired.', $post->ID);
                 $response->data['content']['rendered'] = '<strong>' . esc_html($message) . '</strong>';
