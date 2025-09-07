@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Content expiry\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-04 07:50+0000\n"
+"POT-Creation-Date: 2025-09-07 19:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.2; php-8.1.29\n"
 "X-Domain: dl-content-expiry"
 
-#: src/Plugin.php:163
+#: src/Plugin.php:203
 msgid "and"
 msgstr ""
 
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Content expiry"
 msgstr ""
 
-#: src/Plugin.php:68
+#: src/Plugin.php:77
 msgid "Current server time"
 msgstr ""
 
@@ -32,27 +32,27 @@ msgstr ""
 msgid "Daniel Lúcia"
 msgstr ""
 
-#: src/Plugin.php:58
+#: src/Plugin.php:67
 msgid "Date and time of expiry:"
 msgstr ""
 
-#: src/Plugin.php:159
+#: src/Plugin.php:199
 msgid "days"
 msgstr ""
 
-#: src/Plugin.php:53
+#: src/Plugin.php:62
 msgid "Enable content expiry for this post"
 msgstr ""
 
 #. Description of the plugin
-msgid "Expira el contenido después de un tiempo determinado."
+msgid "Expires the content after a specified time."
 msgstr ""
 
-#: src/Plugin.php:29
+#: src/Plugin.php:38
 msgid "Expiry date"
 msgstr ""
 
-#: src/Plugin.php:160
+#: src/Plugin.php:200
 msgid "hours"
 msgstr ""
 
@@ -60,24 +60,24 @@ msgstr ""
 msgid "http://www.daniellucia.es"
 msgstr ""
 
-#: src/Plugin.php:161
+#: src/Plugin.php:201
 msgid "minutes"
 msgstr ""
 
-#: src/Plugin.php:162
+#: src/Plugin.php:202
 msgid "seconds"
 msgstr ""
 
-#: src/Plugin.php:63
+#: src/Plugin.php:72
 msgid ""
 "Set the date and time when this content will expire. After this date, the "
 "content will be hidden and a message will be displayed."
 msgstr ""
 
-#: src/Plugin.php:128 src/Plugin.php:131 src/Plugin.php:157
+#: src/Plugin.php:148 src/Plugin.php:197
 msgid "This content has expired."
 msgstr ""
 
-#: src/Plugin.php:131 src/Plugin.php:158
+#: src/Plugin.php:148 src/Plugin.php:198
 msgid "Time left:"
 msgstr ""
