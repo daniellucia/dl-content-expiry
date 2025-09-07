@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Content expiry\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-07 19:03+0000\n"
+"PO-Revision-Date: 2025-09-07 19:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: Catalan\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.1.29\n"
+"X-Domain: dl-content-expiry"
+
+#: src/Plugin.php:203
+msgid "and"
+msgstr "i"
+
+#. Name of the plugin
+msgid "Content expiry"
+msgstr "Caducitat del contingut"
+
+#: src/Plugin.php:77
+msgid "Current server time"
+msgstr "Hora actual del servidor"
+
+#. Author of the plugin
+msgid "Daniel Lúcia"
+msgstr "Daniel Lúcia"
+
+#: src/Plugin.php:67
+msgid "Date and time of expiry:"
+msgstr "Data i hora de caducitat:"
+
+#: src/Plugin.php:199
+msgid "days"
+msgstr "dies"
+
+#: src/Plugin.php:62
+msgid "Enable content expiry for this post"
+msgstr "Activa la caducitat del contingut per a aquesta publicació"
+
+#. Description of the plugin
+msgid "Expires the content after a specified time."
+msgstr "Caduca el contingut després d'un temps especificat."
+
+#: src/Plugin.php:38
+msgid "Expiry date"
+msgstr "Data de caducitat"
+
+#: src/Plugin.php:200
+msgid "hours"
+msgstr "hores"
+
+#. Author URI of the plugin
+msgid "http://www.daniellucia.es"
+msgstr "http://www.daniellucia.es"
+
+#: src/Plugin.php:201
+msgid "minutes"
+msgstr "minuts"
+
+#: src/Plugin.php:202
+msgid "seconds"
+msgstr "segons"
+
+#: src/Plugin.php:72
+msgid ""
+"Set the date and time when this content will expire. After this date, the "
+"content will be hidden and a message will be displayed."
+msgstr ""
+"Defineix la data i l'hora en què aquest contingut caducarà. Després "
+"d'aquesta data, el contingut s'ocultarà i es mostrarà un missatge."
+
+#: src/Plugin.php:148 src/Plugin.php:197
+msgid "This content has expired."
+msgstr "Aquest contingut ha caducat."
+
+#: src/Plugin.php:148 src/Plugin.php:198
+msgid "Time left:"
+msgstr "Temps restant:"
