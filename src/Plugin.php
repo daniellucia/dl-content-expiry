@@ -20,6 +20,10 @@ class Plugin
 
         // Evitamos cachear las páginas con contenido expirado
         add_action('dl_content_before_expire', [$this, 'sendNoCacheHeaders']);
+
+        // Evitar mostrar contenido expirado en la REST API
+        add_filter('rest_prepare_post', [$this, 'maybeHideContentRest'], 10, 3);
+
     }
 
     /**
@@ -149,6 +153,29 @@ class Plugin
 
             return $html . $content;
         }
+    }
+
+    /**
+     * Oculata el contenido del post en la api REST si ha expirado
+     * @param mixed $response
+     * @param mixed $post
+     * @param mixed $request
+     * @author Daniel Lucia
+     */
+    public function maybeHideContentRest($response, $post, $request)
+    {
+        $enabled = get_post_meta($post->ID, '_dl_expiry_enabled', true);
+        $expiry = get_post_meta($post->ID, '_dl_expiry_datetime', true);
+
+        if ($enabled === '1' && $expiry) {
+            $expiry_ts = strtotime($expiry);
+            $now = current_time('timestamp');
+            if ($expiry_ts <= $now) {
+                $message = apply_filters('dl_expired_content_message', 'This content has expired.', $post->ID);
+                $response->data['content']['rendered'] = '<strong>' . esc_html($message) . '</strong>';
+            }
+        }
+        return $response;
     }
 
     /**
