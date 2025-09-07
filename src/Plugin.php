@@ -17,6 +17,9 @@ class Plugin
         add_action('save_post', [$this, 'saveExpiryMetaBox']);
         add_filter('the_content', [$this, 'maybeHideContent']);
         add_action('wp_enqueue_scripts', [$this, 'enqueueCountdownScript']);
+
+        // Evitamos cachear las páginas con contenido expirado
+        add_action('dl_content_before_expire', [$this, 'sendNoCacheHeaders']);
     }
 
     /**
@@ -204,5 +207,19 @@ class Plugin
     {
         $timezone = wp_timezone();
         return (new \DateTime($expiry, $timezone))->format($format);
+    }
+
+    /**
+     * Enviamos las cabeceras para deshabilitar cache
+     * @return void
+     * @author Daniel Lucia
+     */
+    private function sendNoCacheHeaders()
+    {
+        if (!headers_sent()) {
+            header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+            header('Pragma: no-cache');
+            header('Expires: Wed, 11 Jan 1984 05:00:00 GMT');
+        }
     }
 }
