@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Content expiry\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-07 19:03+0000\n"
+"PO-Revision-Date: 2025-09-07 19:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: Italian\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.1.29\n"
+"X-Domain: dl-content-expiry"
+
+#: src/Plugin.php:203
+msgid "and"
+msgstr "E"
+
+#. Name of the plugin
+msgid "Content expiry"
+msgstr "Scadenza del contenuto"
+
+#: src/Plugin.php:77
+msgid "Current server time"
+msgstr "Ora corrente del server"
+
+#. Author of the plugin
+msgid "Daniel Lúcia"
+msgstr "Daniele Lucia"
+
+#: src/Plugin.php:67
+msgid "Date and time of expiry:"
+msgstr "Data e ora di scadenza:"
+
+#: src/Plugin.php:199
+msgid "days"
+msgstr "giorni"
+
+#: src/Plugin.php:62
+msgid "Enable content expiry for this post"
+msgstr "Abilita la scadenza del contenuto per questo post"
+
+#. Description of the plugin
+msgid "Expires the content after a specified time."
+msgstr "Fa scadere il contenuto dopo un periodo di tempo specificato."
+
+#: src/Plugin.php:38
+msgid "Expiry date"
+msgstr "Data di scadenza"
+
+#: src/Plugin.php:200
+msgid "hours"
+msgstr "ore"
+
+#. Author URI of the plugin
+msgid "http://www.daniellucia.es"
+msgstr "http://www.daniellucia.es"
+
+#: src/Plugin.php:201
+msgid "minutes"
+msgstr "minuti"
+
+#: src/Plugin.php:202
+msgid "seconds"
+msgstr "secondi"
+
+#: src/Plugin.php:72
+msgid ""
+"Set the date and time when this content will expire. After this date, the "
+"content will be hidden and a message will be displayed."
+msgstr ""
+"Imposta la data e l'ora di scadenza di questo contenuto. Dopo questa data, "
+"il contenuto verrà nascosto e verrà visualizzato un messaggio."
+
+#: src/Plugin.php:148 src/Plugin.php:197
+msgid "This content has expired."
+msgstr "Questo contenuto è scaduto."
+
+#: src/Plugin.php:148 src/Plugin.php:198
+msgid "Time left:"
+msgstr "Tempo rimanente:"
