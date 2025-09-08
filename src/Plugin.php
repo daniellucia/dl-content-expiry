@@ -133,8 +133,8 @@ class Plugin
         $html = '';
         $expiry_ts = $this->expiry($expiry);
         $now = $this->now();
-        
-        if ($expiry_ts <= $now) {
+
+        if ($this->isExpired($expiry)) {
 
             do_action('dl_content_before_expire', $post->ID);
             $message = apply_filters('dl_expired_content_message', 'This content has expired.', $post->ID);
@@ -168,9 +168,7 @@ class Plugin
         $expiry = get_post_meta($post->ID, '_dl_expiry_datetime', true);
 
         if ($enabled === '1' && $expiry) {
-            $expiry_ts = $this->expiry($expiry);
-            $now = $this->now();
-            if ($expiry_ts <= $now) {
+            if ($this->isExpired($expiry)) {
                 $message = apply_filters('dl_expired_content_message', 'This content has expired.', $post->ID);
                 $response->data['content']['rendered'] = '<strong>' . esc_html($message) . '</strong>';
             }
@@ -248,5 +246,18 @@ class Plugin
             header('Pragma: no-cache');
             header('Expires: Wed, 11 Jan 1984 05:00:00 GMT');
         }
+    }
+
+    /**
+     * Comprueba si una fecha de expiración ha pasado
+     * @param mixed $expiry
+     * @return bool
+     * @author Daniel Lucia
+     */
+    private function isExpired($expiry): bool
+    {
+        $expiry_ts = $this->expiry($expiry);
+        $now = $this->now();
+        return $expiry_ts <= $now;
     }
 }
